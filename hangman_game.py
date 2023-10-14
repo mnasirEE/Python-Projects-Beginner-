@@ -8,6 +8,13 @@ secret_word = random.choice(list_of_words)
 secret_word_length = len(secret_word)
 # number of guesses
 chances = secret_word_length + 2
+
+# creating a variable whose length is according to the secret word and 
+# which is filled with dashes
+destination_word = ""
+for i in range(len(secret_word)):
+    destination_word = destination_word + "_"
+
 # game_loop
 for i in range(chances):
 
