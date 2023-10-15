@@ -39,14 +39,30 @@ for i in range(chances):
 
     # user guess an alphabet at a time 
     user_guess = input("\nEnter an alphabet: ")
+    # calling a display function to display 
+    # the secret word alphabets with dashes and replace
+    # the dashes with user guess alphabet 
+    # if user entered alphabet is present in the secret word 
     display_user_guess(secret_word, user_guess)
+    # printing the output of above function
     print(destination_word)
-    if destination_word == secret_word:
+    # checking that the user guessed word is same as secret word
+    # if user guessed word is equal to secret word
+    if destination_word == secret_word: 
+        # if user guessed word is equal to secret word
+        # print player wins
         print("Good Job\n You win")
+        # if player or user wins, exit from loop, no need to use all chances
         break
-    else: 
+    # otherwise user guessed word is not equal to secret word
+    # continue to give chances to the user
+    else:
+        # next iteration of loop begins by this statement 
         continue 
 
+# if all chances of user are finished, it means user guessed word is 
+# not equal to secret word
+# so, user lose the game
 if destination_word != secret_word: 
     print("\nYour chances are finished")
     print("\nYou lose")    
