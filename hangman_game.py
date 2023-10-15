@@ -14,31 +14,42 @@ chances = secret_word_length + 2
 destination_word = ""
 for i in range(len(secret_word)):
     destination_word = destination_word + "_"
+   
 
 # function to print the word after each guess or turn of the user
 # this function takes two arguments secret_word and user_guess
+
 def display_user_guess(secret_word, user_guess):
     # we made destination_word, a global variable because
     # we want to change it into another function 
     global destination_word
     for i in range(len(secret_word)):
-        if user_guess == secret_word[i]:
-            destination_word = destination_word.replace(destination_word[i], 
-                                                        user_guess)
+        if user_guess.lower() == secret_word[i]:
+            
+            destination_word_list = list(destination_word)
+            destination_word_list[i] = user_guess.lower()
+            destination_word = str("".join(destination_word_list))
+            
         else:
-            continue    
+            continue
+                
 
 # game_loop
 for i in range(chances):
 
     # user guess an alphabet at a time 
-    user_guess = input("Enter an alphabet: ")
+    user_guess = input("\nEnter an alphabet: ")
     display_user_guess(secret_word, user_guess)
     print(destination_word)
     if destination_word == secret_word:
         print("Good Job\n You win")
+        break
     else: 
-        continue    
+        continue 
+
+if destination_word != secret_word: 
+    print("\nYour chances are finished")
+    print("\nYou lose")    
     
  
 
