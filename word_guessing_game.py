@@ -33,6 +33,8 @@ def display_user_guess(secret_word, user_guess):
         else:
             continue
                 
+# user name
+user_name = input("Enter User Name: ")
 
 # game_loop
 for i in range(chances):
