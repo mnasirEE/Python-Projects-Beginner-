@@ -1,7 +1,7 @@
 # import random module for the selection of secret word
 import random
 # create a list of fruits
-list_of_words = ["mango", "grapes"]
+list_of_words = ["mango", "grapes", "banana"]
 # selection of secret word from the list of words
 secret_word = random.choice(list_of_words)
 # length of secret_word
