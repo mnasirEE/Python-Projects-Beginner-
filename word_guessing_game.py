@@ -5,7 +5,7 @@ import random
 user_name = input("Enter your Name: ")
 
 # Welcome message
-print("Welcome to Nasir's Word Guessing Game")
+print(f"\n{user_name}, Welcome to Nasir's Word Guessing Game")
 
 # create a list of fruits
 list_of_words = ["banana", "grapes", "mango"]
@@ -17,7 +17,7 @@ secret_word_length = len(secret_word)
 chances = secret_word_length + 2
 
 # printing chances
-print("The total chances you have: ", chances)
+print("\nThe total chances you have: ",chances)
 
 # making copy of secret word 
 # that is basically used for letters that are present more than once in secret word
