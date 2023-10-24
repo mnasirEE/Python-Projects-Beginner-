@@ -12,15 +12,52 @@ current_player = 1
 def player_choice(total_cards, list_of_cards, current_player):
     # user wants to play first or second or want his first turn or second 
     user_demand = input("Enter 'f' for first and enter 's' for second\nWant to play first or second: ") 
-    #
-    if user_demand == "f":
+    while total_cards != 0:
+        if user_demand == "f":
+            # player turn
+            number_of_cards = int(input("How many cards you want to pick: "))
+            for choice in range(number_of_cards):
+                print("You can pick cards from this list\n",list_of_cards)
+                print("choose your cards")
+                pick_cards = int(input(">> "))
+                list_of_cards.pop(pick_cards)
+            # current_player = current_player    
+            # computer turn
+            # 2nd player
+            current_player = 3 - current_player
+            computer_num_of_cards = random.randint(1,3)
+            for comp_choice in range(computer_num_of_cards):
+                computer_pick_cards = random.choice(list_of_cards)
+                list_of_cards.pop(pick_cards)
+            total_cards = total_cards - pick_cards - computer_pick_cards 
+               
+
+
         
-    elif user_demand == "s":
-        
-    #
-    else:
-        print("Enter valid input: ")
-        player_choice(total_cards, list_of_cards, current_player)
+        elif user_demand == "s":
+            # computer turn
+            # 1st player
+            current_player = 1
+            computer_num_of_cards = random.randint(1,3)
+            for comp_choice in range(computer_num_of_cards):
+                computer_pick_cards = random.choice(list_of_cards)
+                list_of_cards.pop(pick_cards)
+           
+             # player turn
+            # second player
+            current_player = 3 - current_player
+            number_of_cards = int(input("How many cards you want to pick: "))
+            for choice in range(number_of_cards):
+                print("You can pick cards from this list\n",list_of_cards)
+                print("choose your cards")
+                pick_cards = int(input(">> "))
+                list_of_cards.pop(pick_cards)  
+
+            total_cards = total_cards - pick_cards - computer_pick_cards 
+        #
+        else:
+            print("Enter valid input: ")
+            
 
 # Game loop
 def game_loop():
